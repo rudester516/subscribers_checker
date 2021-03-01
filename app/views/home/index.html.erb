@@ -1,0 +1,18 @@
+<h3>Select two CSV files to upload</h3>
+<div>
+  <%= form_with url: home_process_csvs_path, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :file, 'Upload CSV File', class: 'form-label' %>
+      <%= form.file_field :file_one, class: 'form-control-file', required: true %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :file, 'Upload CSV File', class: 'form-label' %>
+      <%= form.file_field :file_two, class: 'form-control-file', required: true %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :file, 'Concerns', class: 'form-label' %>
+      <%= form.select :concerns, [['Both', 'both'], ['Subscriber Count', 'subscriber_count'], ['Channel Ownership', 'channel_ownership']], class: 'form-select' %>
+    </div>
+    <%= form.submit 'Upload CSV files', class: 'btn btn-primary' %>
+  <% end %>
+</div>

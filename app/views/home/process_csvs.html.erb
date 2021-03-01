@@ -1,0 +1,13 @@
+<h3>Accounts with discrepancies</h3>
+<div>
+  <% if @account_discrepancies %>
+    <% @account_discrepancies.each do |account| %>
+      <div><%= account %></div>
+    <% end %>
+  <% else %>
+    <p>There were no discrepancies between the two uploaded files</p>
+  <% end %>
+</div>
+<div>
+  <%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+</div>
